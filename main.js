@@ -4,6 +4,16 @@ const input = document.querySelector("#search-input");
 const resultContainer = document.querySelector("#result-1");
 
 form.addEventListener("click", e => {
+  search();
+});
+
+input.addEventListener("keydown", e => {
+  if (e.keyCode === 13) {
+    search();
+  }
+});
+
+function search() {
   const searchTerm = input.value;
   const API_URL = `https://pixabay.com/api/?key=${API_KEY}&q=${searchTerm}`;
 
@@ -18,4 +28,4 @@ form.addEventListener("click", e => {
         resultContainer.appendChild(imgElement);
       }
     });
-});
+}
