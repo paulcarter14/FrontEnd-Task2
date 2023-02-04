@@ -19,16 +19,12 @@
   margin-top: 100px;
 }
 
-.info-container h2{
-  margin-top: -2px;
-  color: red;
-}
 
 .search-container{
   align-items: center;
   display: flex;
   flex-direction: column;
-
+margin-top: 2rem;
 }
 
 #search-input{
@@ -44,6 +40,8 @@
   width: 4rem;
   border-radius: 2px;
   border-radius: 13%;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 .display-container{
@@ -117,10 +115,4 @@
    width: 100px;
    height: 100px;
    object-fit: cover;
- }
-
-
-
- p{
-  font-size: 1rem;
  }
