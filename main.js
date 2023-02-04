@@ -1,18 +1,21 @@
-const searchInput = document.querySelector('#search-input');
-const searchButton = document.querySelector('#search-button');
-const resultsContainer = document.querySelector('#results-container');
+const API_KEY = "33344475-5182ce2ae8f19dc0adf2e7232";
+const form = document.querySelector("#search-button");
+const input = document.querySelector("#search-input");
+const resultContainer = document.querySelector("#result-1");
 
-searchButton.addEventListener('click', () => {
-  const searchTerm = searchInput.value;
-  fetch(`https://pixabay.com/api/?key=33344475-5182ce2ae8f19dc0adf2e7232&q=${searchTerm}&image_type=photo`)
+form.addEventListener("click", e => {
+  const searchTerm = input.value;
+  const API_URL = `https://pixabay.com/api/?key=${API_KEY}&q=${searchTerm}`;
+
+  fetch(API_URL)
     .then(response => response.json())
     .then(data => {
-      resultsContainer.innerHTML = '';
-      data.hits.forEach(hit => {
-        const result = document.createElement('div');
-        result.classList.add('result');
-        result.style.backgroundImage = `url(${hit.webformatURL})`;
-        resultsContainer.appendChild(result);
-      });
+      resultContainer.innerHTML = "";
+      for (let i = 0; i < 10; i++) {
+        const image = data.hits[i];
+        const imgElement = document.createElement("img");
+        imgElement.src = image.webformatURL;
+        resultContainer.appendChild(imgElement);
+      }
     });
 });
