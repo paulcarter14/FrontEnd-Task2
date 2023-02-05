@@ -26,6 +26,7 @@ function search() {
         const imgElement = document.createElement("img");
         imgElement.src = image.webformatURL;
         resultContainer.appendChild(imgElement);
+        
       }
     });
 }
