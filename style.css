@@ -92,3 +92,6 @@ margin-top: 2rem;
   grid-area: j;
   }
 
+  img{
+    size: auto;
+  }
