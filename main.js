@@ -1,13 +1,13 @@
-const API_KEY = "33344475-5182ce2ae8f19dc0adf2e7232";
-const form = document.querySelector("#search-button");
-const input = document.querySelector("#search-input");
-const resultContainer = document.querySelector("#result-1");
+const API_KEY = '33344475-5182ce2ae8f19dc0adf2e7232';
+const form = document.querySelector('#search-button');
+const input = document.querySelector('#search-input');
+const resultContainer = document.querySelector('#result-1');
 
-form.addEventListener("click", e => {
+form.addEventListener('click', e => {
   search();
 });
 
-input.addEventListener("keydown", e => {
+input.addEventListener('keydown', e => {
   if (e.keyCode === 13) {
     search();
   }
@@ -23,7 +23,7 @@ function search() {
       resultContainer.innerHTML = "";
       for (let i = 0; i < 10; i++) {
         const image = data.hits[i];
-        const imgElement = document.createElement("img");
+        const imgElement = document.createElement('img');
         imgElement.src = image.webformatURL;
         resultContainer.appendChild(imgElement);
         
