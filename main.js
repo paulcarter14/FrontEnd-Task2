@@ -1,5 +1,5 @@
 const API_KEY = '33344475-5182ce2ae8f19dc0adf2e7232';
-const form = document.querySelector('#search-button');
+const form = document.querySelector('search-button');
 const input = document.querySelector('#search-input');
 
 form.addEventListener('click', e => {
