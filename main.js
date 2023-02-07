@@ -15,6 +15,7 @@ input.addEventListener('keydown', e => {
 
 function search() {
   const searchTerm = input.value;
+  // const API_URL = 'https://pixabay.com/api/?key=' + API_KEY + '&q=' + searchTerm; GÖR SAMMA SOM UNDERSTÅENDE!
   const API_URL = `https://pixabay.com/api/?key=${API_KEY}&q=${searchTerm}`;
 
   fetch(API_URL)
