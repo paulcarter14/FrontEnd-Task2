@@ -4,6 +4,10 @@
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+.display-container img {
+  width: 100%;
+}
+
 .body{
   text-align: center;
   max-width: 1200;
@@ -47,9 +51,10 @@ margin-top: 2rem;
 .display-container {
   display: grid;
   grid-template:
-  "a b"
-  "c d e f"
-  "g h i j" / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  "a b c d"
+  "e f g h"
+  "fake1 i j fake2"  / 1fr 1fr 1fr 1fr;
+  place-items: center;
   }
   
   #result-1 {

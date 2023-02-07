@@ -12,21 +12,19 @@ input.addEventListener('keydown', e => {
   }
 });
 
-function search() {
+async function search() {
   const searchTerm = input.value;
   // const API_URL = 'https://pixabay.com/api/?key=' + API_KEY + '&q=' + searchTerm; GÖR SAMMA SOM UNDERSTÅENDE!
   const API_URL = `https://pixabay.com/api/?key=${API_KEY}&q=${searchTerm}`;
 
-  fetch(API_URL)
-    .then(response => response.json())
-    .then(data => {
-      for (let i = 0; i < 10; i++) {
-        const image = data.hits[i];
-        const resultContainer = document.querySelector(`#result-${i + 1}`);
-        resultContainer.innerHTML = "";
-        const imgElement = document.createElement('img');
-        imgElement.src = image.webformatURL;
-        resultContainer.appendChild(imgElement);
-      }
-    });
-}
+  const response = await fetch(API_URL);
+  const data = await response.json()
+    for (let i = 0; i < 10; i++) {
+      const image = data.hits[i];
+      const resultContainer = document.querySelector(`#result-${i + 1}`);
+      resultContainer.innerHTML = "";
+      const imgElement = document.createElement('img');
+      imgElement.src = image.webformatURL;
+      resultContainer.appendChild(imgElement);
+    }
+};
