@@ -35,6 +35,13 @@ margin-top: 2rem;
   border-width: 2px;
 }
 
+#color-input{
+  width: 20rem;
+  height: 2rem;
+  font-size: large;
+  border-width: 2px;
+}
+
 #search-button{
   margin-top: 5px;
   height: 2rem;
