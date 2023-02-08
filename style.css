@@ -4,15 +4,12 @@
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.display-container img {
-  width: 100%;
-}
-
 .body{
   text-align: center;
   max-width: 1200;
   margin-left: auto;
   margin-right: auto;
+  
 }
 
 .info-container{
@@ -51,49 +48,87 @@ margin-top: 2rem;
 .display-container {
   display: grid;
   grid-template:
-  "a b c d"
+  "a b c d" 
   "e f g h"
-  "fake1 i j fake2"  / 1fr 1fr 1fr 1fr;
+  "fake1 i j fake2" / 1fr 1fr 1fr 1fr;
   place-items: center;
-  }
-  
-  #result-1 {
+}
+
+
+#result-1 {
   grid-area: a;
-  }
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap-reverse;
+}
   
-  #result-2 {
+#result-2 {
   grid-area: b;
-  }
+}
   
-  #result-3 {
+#result-3 {
   grid-area: c;
-  }
+}
   
-  #result-4 {
+#result-4 {
   grid-area: d;
-  }
+}
   
-  #result-5 {
+#result-5 {
   grid-area: e;
-  }
+}
   
-  #result-6 {
+#result-6 {
   grid-area: f;
-  }
+}
   
-  #result-7 {
+#result-7 {
   grid-area: g;
-  }
+}
   
-  #result-8 {
+#result-8 {
   grid-area: h;
-  }
+}
   
-  #result-9 {
+#result-9 {
   grid-area: i;
-  }
+}
   
-  #result-10 {
+#result-10 {
   grid-area: j;
-  }
+}
+
+p{
+  display: block;
+  font-size: 1rem;
+  margin:0;
+}
+
+#result-1,
+#result-2,
+#result-3,
+#result-4,
+#result-5,
+#result-6,
+#result-7,
+#result-8,
+#result-9,
+#result-10{
+  height: 400px;
+  width: 300px;
+}
+
+#result-1 img,
+#result-2 img,
+#result-3 img,
+#result-4 img,
+#result-5 img,
+#result-6 img,
+#result-7 img,
+#result-8 img,
+#result-9 img,
+#result-10 img{
+  height: 300px;
+  width: 300px;
+}
 
