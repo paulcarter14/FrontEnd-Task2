@@ -46,7 +46,4 @@ async function search() {
     nameElement.textContent = namePhotografer;
     resultContainer.appendChild(nameElement);
   }
-
-
-    
 };
