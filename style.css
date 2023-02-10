@@ -23,9 +23,11 @@
 
 .search-container{
   align-items: center;
+  justify-content: center;
   display: flex;
-  flex-direction: column;
-margin-top: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  
 }
 
 #search-input{
@@ -36,20 +38,16 @@ margin-top: 2rem;
 }
 
 #color-input{
-  width: 20rem;
+  width: 10rem;
   height: 2rem;
   font-size: large;
   border-width: 2px;
+  margin: 1rem;
 }
 
 #search-button{
-  margin-top: 5px;
   height: 2rem;
   width: 4rem;
-  border-radius: 2px;
-  border-radius: 13%;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
 }
 
 .display-container {
