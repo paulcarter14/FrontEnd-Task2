@@ -3,9 +3,23 @@ let form = document.querySelector('form');
 let input = document.querySelector('#search-input');
 let input_color = document.querySelector('#color-input');
 let page = 1;
+let backButton = document.querySelector("#back");
+let nextButton = document.querySelector("#next");
 
 form.addEventListener('submit', e => {
   e.preventDefault();
+  search();
+});
+
+backButton.addEventListener('click', e => {
+  e.preventDefault();
+  page--;
+  search();
+});
+
+nextButton.addEventListener('click', e => {
+  e.preventDefault();
+  page++;
   search();
 });
 
@@ -39,4 +53,3 @@ async function search() {
     resultContainer.appendChild( nameElement);
   }
 };
-
