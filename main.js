@@ -44,7 +44,10 @@ async function search() {
 
 backButton.addEventListener('click', e => {
   e.preventDefault();
-  if (page > 1) {
+  if (page === 1) {
+    backButton.setAttribute('disabled', 'disabled');
+  } else {
+    backButton.removeAttribute('disabled');
     page--;
     search();
   }
@@ -54,4 +57,5 @@ nextButton.addEventListener('click', e => {
   e.preventDefault();
   page++;
   search();
+  backButton.removeAttribute('disabled');
 });
