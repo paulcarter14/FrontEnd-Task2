@@ -19,7 +19,7 @@ async function search() {
   let searchTerm = input.value;
   let colorTerm = input_color.value;
   //Vi vill skicka detta till sidan + antal bilder per sida.
-  let API_URL = `https://pixabay.com/api/?key=${API_KEY}&q=${searchTerm}&colors=${colorTerm}&per_page=10`;
+  let API_URL = `https://pixabay.com/api/?key=${API_KEY}&q=${searchTerm}&colors=${colorTerm}&per_page=10&page=${page}`;
   
   //tillbaka ska vi få bild,tagg och namn,
   let response = await fetch(API_URL);
@@ -30,6 +30,10 @@ async function search() {
     //be Jakob gå igenom hur man hittade allt som kom med bilden. (tags / id etc)
     let image =json.hits[i];
     let resultContainer = document.querySelector(`#result-${i + 1}`);
+
+    while (resultContainer.firstChild) {
+      resultContainer.removeChild(resultContainer.firstChild);
+    }
     let imgElement = document.createElement('img');
     //djupdyk i detta.
     imgElement.src = image.webformatURL;
@@ -43,7 +47,8 @@ async function search() {
 
     let namePhotografer = json.hits[i].user;
     let nameElement = document.createElement('p');
-    nameElement.textContent = namePhotografer;
-    resultContainer.appendChild(nameElement);
+    nameElement.textContent = 'Taken by: ' + namePhotografer;
+    resultContainer.appendChild( nameElement);
   }
 };
+
