@@ -11,18 +11,6 @@ form.addEventListener('submit', e => {
   search();
 });
 
-backButton.addEventListener('click', e => {
-  e.preventDefault();
-  page--;
-  search();
-});
-
-nextButton.addEventListener('click', e => {
-  e.preventDefault();
-  page++;
-  search();
-});
-
 async function search() {
   let searchTerm = input.value;
   let colorTerm = input_color.value;
@@ -53,3 +41,17 @@ async function search() {
     resultContainer.appendChild( nameElement);
   }
 };
+
+backButton.addEventListener('click', e => {
+  e.preventDefault();
+  if (page > 1) {
+    page--;
+    search();
+  }
+});
+
+nextButton.addEventListener('click', e => {
+  e.preventDefault();
+  page++;
+  search();
+});

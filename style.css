@@ -9,15 +9,21 @@
   max-width: 1200;
   margin-left: auto;
   margin-right: auto;
-  
 }
 
-.info-container{
+/* .info-container{
   align-items: center;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   margin-top: 100px;
+} */
+
+.hero {
+  background-image: url('lol-map.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 
@@ -25,8 +31,8 @@
   align-items: center;
   justify-content: center;
   display: flex;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  /* margin-top: 2rem;
+  margin-bottom: 2rem; */
   
 }
 
@@ -185,6 +191,7 @@
   font-size: 26px;
   display: block;
   margin:0;
+  color: white;
 }
 
 #result-1 :last-child,
