@@ -50,6 +50,7 @@
   width: 4rem;
 }
 
+/* 54 - 101 är för display-layouten på sidan. */
 .display-container {
   display: grid;
   grid-template:
@@ -59,12 +60,8 @@
   place-items: center;
 }
 
-
 #result-1 {
   grid-area: a;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap-reverse;
 }
   
 #result-2 {
@@ -102,13 +99,60 @@
 #result-10 {
   grid-area: j;
 }
-
-p{
-  display: block;
-  font-size: 1rem;
-  margin:0;
+/* 103 - 153 är mediaquerries som ändrar layoputen baserat på skärmstorleken.*/
+@media (max-width: 1200px) {
+  .display-container {
+      display: grid;
+      grid-template:
+          "a b c"
+          "d e f"
+          "g h i"
+          "fake1 j fake2";
+  }
+  #image {
+      margin-left: auto;
+      margin-right: auto;
+  }
 }
 
+@media (max-width: 900px) {
+  .display-container {
+      display: grid;
+      grid-template:
+          "a b" 
+          "c d"
+          "e f"
+          "g h"
+          "i j";
+  }
+  #image {
+      margin-left: auto;
+      margin-right: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .display-container {
+      display: grid;
+      grid-template:
+          "a" 
+          "b" 
+          "c" 
+          "d"
+          "e" 
+          "f"
+          "g" 
+          "h"
+          "i" 
+          "j";
+  }
+  #image {
+      margin-left: auto;
+      margin-right: auto;
+  }
+}
+
+/* 155 - 182 är för display boxen samt bilden. boxen är högre än bilden för att få plats med text*/
 #result-1,
 #result-2,
 #result-3,
@@ -136,4 +180,22 @@ p{
   height: 300px;
   width: 300px;
 }
+/* 184 - 202 är för fonten på tagg-texten samt namnet på fotogragfen */
+.display-container p {
+  font-size: 26px;
+  display: block;
+  margin:0;
+}
 
+#result-1 :last-child,
+#result-2 :last-child,
+#result-3 :last-child,
+#result-4 :last-child,
+#result-5 :last-child,
+#result-6 :last-child,
+#result-7 :last-child,
+#result-8 :last-child,
+#result-9 :last-child,
+#result-10 :last-child{
+  font-size: 17px;
+}
