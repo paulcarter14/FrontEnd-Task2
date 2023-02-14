@@ -4,6 +4,18 @@
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+html {
+  background-image: url('lol-map.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+[hidden] {
+  display: none !important;
+}
+
 .body{
   text-align: center;
   max-width: 1200;
@@ -18,14 +30,6 @@
   flex-wrap: wrap;
   margin-top: 100px;
 } */
-
-.hero {
-  background-image: url('lol-map.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-
 
 .search-container{
   align-items: center;
