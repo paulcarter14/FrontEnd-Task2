@@ -5,16 +5,19 @@ let input_color = document.querySelector('#color-input');
 let page = 1;
 let backButton = document.querySelector("#back");
 let nextButton = document.querySelector("#next");
+let searchTerm = input.value;
+let colorTerm = input_color.value;
+//Vi behöver spara url för att att endast ändra page (förmodligen på en separat variabel som endast ändrar på page.).
+let API_URL = `https://pixabay.com/api/?key=${API_KEY}&q=${searchTerm}&colors=${colorTerm}&per_page=10&page=${page}`;
+
+
 
 form.addEventListener('submit', e => {
   e.preventDefault();
-  search();
+  search(API_URL);
 });
 
-async function search() {
-  let searchTerm = input.value;
-  let colorTerm = input_color.value;
-  let API_URL = `https://pixabay.com/api/?key=${API_KEY}&q=${searchTerm}&colors=${colorTerm}&per_page=10&page=${page}`;
+async function search(API_URL) {
   
   let response = await fetch(API_URL);
   let json = await response.json();
@@ -42,17 +45,27 @@ async function search() {
   }
 };
 
-backButton.addEventListener('click', e => {
-  e.preventDefault();
-  if (page > 1) {
-    page--;
-    search();
-    backButton.removeAttribute('disabled');
-  }
-  else{
-    backButton.setAttribute('disabled', 'disabled')
-  } 
+// backButton.addEventListener('click', e => {
+//   e.preventDefault();
+//   if (page > 1) {
+//     page--;
+//     search();
+//     backButton.removeAttribute('disabled');
+//   }
+//   else{
+//     backButton.setAttribute('disabled', 'disabled')
+//   } 
   
+// });
+
+
+
+backButton.addEventListener ('click', e => {
+  page--;
+  search();
+  if(page===1){
+    backButton.setAttribute('disabled', 'disabled');
+  }
 });
 
 nextButton.addEventListener('click', e => {
