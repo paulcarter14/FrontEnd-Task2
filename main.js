@@ -80,16 +80,3 @@ async function search(query, color) {
     resultContainer.appendChild( nameElement);
   }
 };
-
-// backButton.addEventListener('click', e => {
-//   e.preventDefault();
-//   if (page > 1) {
-//     page--;
-//     search();
-//     backButton.removeAttribute('disabled');
-//   }
-//   else{
-//     backButton.setAttribute('disabled', 'disabled')
-//   } 
-  
-// });
