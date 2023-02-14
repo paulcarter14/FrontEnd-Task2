@@ -5,20 +5,56 @@ let input_color = document.querySelector('#color-input');
 let page = 1;
 let backButton = document.querySelector("#back");
 let nextButton = document.querySelector("#next");
-let searchTerm = input.value;
-let colorTerm = input_color.value;
-//Vi behöver spara url för att att endast ändra page (förmodligen på en separat variabel som endast ändrar på page.).
-let API_URL = `https://pixabay.com/api/?key=${API_KEY}&q=${searchTerm}&colors=${colorTerm}&per_page=10&page=${page}`;
+// "Start value / New Search" för sökterm och färg.
+let search1;
+let color1;
+// "Old Search", tar över "New Search" värde när en ny sökning görs.
+let search2;
+let color2;
 
-
+// Skapa en räknare för Search
+let counter = 0;
 
 form.addEventListener('submit', e => {
   e.preventDefault();
-  search(API_URL);
+  search1 = input.value;
+  color1 = input_color.value;
+  search(search1, color1);
+  counter++;
 });
 
-async function search(API_URL) {
-  
+backButton.addEventListener ('click', e => {
+  page--;
+  search2 = search1;
+  color2 = color1;
+  search(search2, color1);
+  if (page===1) {
+    backButton.setAttribute('disabled', 'disabled');
+  }
+});
+
+nextButton.addEventListener('click', e => {
+  page++;
+  search2 = search1;
+  color2 = color1;
+  search(search2, color1);
+  if (page > 1) {
+    backButton.removeAttribute('disabled');
+  }
+});
+
+async function search(query, color) {
+  // let searchTerm = input.value;
+  // let colorTerm = input_color.value;
+  let container = document.querySelector('.display-container');
+  container.hidden = false;
+  //Vi behöver spara url för att att endast ändra page (förmodligen på en separat variabel som endast ändrar på page.).
+  let API_URL = `https://pixabay.com/api/?key=${API_KEY}&q=${query}&colors=${color}&per_page=10&page=${page}`;
+
+  form.onclick = event => {
+    counter++;
+  }
+
   let response = await fetch(API_URL);
   let json = await response.json();
   
@@ -57,22 +93,3 @@ async function search(API_URL) {
 //   } 
   
 // });
-
-
-
-backButton.addEventListener ('click', e => {
-  page--;
-  search();
-  if(page===1){
-    backButton.setAttribute('disabled', 'disabled');
-  }
-});
-
-nextButton.addEventListener('click', e => {
-  e.preventDefault();
-  page++;
-  search();
-  backButton.removeAttribute('disabled');
-});
-
-

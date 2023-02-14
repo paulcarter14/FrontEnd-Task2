@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,22 +9,20 @@
     <link rel="stylesheet" href="style.css">
     <script src="main.js" defer></script>
 </head>
+
 <body>
-    <header>
-        
-    </header>
     <main>
-        <div class="info-container">
-            <img id="almost" src="Almost.png" alt="">
-            <img id="google" src="Google.png" alt="">
-            <img id="worse" src="worse.png" alt="">
-        </div>
+        <!-- <div class="info-container">
+                    <img id="almost" src="Almost.png" alt="">
+                    <img id="google" src="Google.png" alt="">
+                    <img id="worse" src="worse.png" alt="">
+                </div> -->
         <div class="search-container">
             <form id="search-form">
 
                 <input type="text" id="search-input" placeholder="Enter serach phrase here" required>
                 <select id="color-input">
-                    <option value=""selected>Any collor</option>
+                    <option value="" selected>Any collor</option>
                     <option value="green">Green</option>
                     <option value="red">Red</option>
                     <option value="yellow">Yellow</option>
@@ -35,9 +34,10 @@
                 <!-- <input type="text" id="color-input" placeholder="Choose colour" required> -->
                 <button id="search-button">Search</button>
             </form>
-            
+
         </div>
-        <div class="display-container">
+        <div class="display-container" hidden>
+            <!-- Kan behövas sättas hidden på de enskilda resulten, ex om vi bara får 7 resultat vill vi inte skapa 3 tomma resultat -->
             <div id="result-1"></div>
             <div id="result-2"></div>
             <div id="result-3"></div>
@@ -51,8 +51,8 @@
         </div>
         <div class="arrow-container">
             <form action="buttons">
-                <button id="back" disabled = 'disabled'>Previus</button>
-                <button id="next">Next</button>
+                <button type="button" id="back" disabled="disabled">Previus</button>
+                <button type="button" id="next">Next</button
             </form>
         </div>
     </main>
@@ -60,4 +60,5 @@
         <p>Martin is a true LEGEND!</p>
     </footer>
 </body>
+
 </html>
