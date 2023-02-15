@@ -70,43 +70,43 @@ html {
   place-items: center;
 }
 
-#result-1 {
+#result-0 {
   grid-area: a;
 }
   
-#result-2 {
+#result-1 {
   grid-area: b;
 }
   
-#result-3 {
+#result-2 {
   grid-area: c;
 }
   
-#result-4 {
+#result-3 {
   grid-area: d;
 }
   
-#result-5 {
+#result-4 {
   grid-area: e;
 }
   
-#result-6 {
+#result-5 {
   grid-area: f;
 }
   
-#result-7 {
+#result-6 {
   grid-area: g;
 }
   
-#result-8 {
+#result-7 {
   grid-area: h;
 }
   
-#result-9 {
+#result-8 {
   grid-area: i;
 }
   
-#result-10 {
+#result-9 {
   grid-area: j;
 }
 /* 103 - 153 är mediaquerries som ändrar layoputen baserat på skärmstorleken.*/
@@ -163,6 +163,7 @@ html {
 }
 
 /* 155 - 182 är för display boxen samt bilden. boxen är högre än bilden för att få plats med text*/
+#result-0,
 #result-1,
 #result-2,
 #result-3,
@@ -171,12 +172,12 @@ html {
 #result-6,
 #result-7,
 #result-8,
-#result-9,
-#result-10{
+#result-9{
   height: 400px;
   width: 300px;
 }
 
+#result-0 img,
 #result-1 img,
 #result-2 img,
 #result-3 img,
@@ -185,8 +186,7 @@ html {
 #result-6 img,
 #result-7 img,
 #result-8 img,
-#result-9 img,
-#result-10 img{
+#result-9 img{
   height: 300px;
   width: 300px;
 }
@@ -198,6 +198,7 @@ html {
   color: white;
 }
 
+#result-0 :last-child,
 #result-1 :last-child,
 #result-2 :last-child,
 #result-3 :last-child,
@@ -206,7 +207,6 @@ html {
 #result-6 :last-child,
 #result-7 :last-child,
 #result-8 :last-child,
-#result-9 :last-child,
-#result-10 :last-child{
+#result-9 :last-child{
   font-size: 17px;
 }
