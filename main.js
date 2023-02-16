@@ -63,12 +63,17 @@ async function search(query, color) {
   //   counter++;
   // }
 
+  // Ta bort Counter // räkna ut pages baserat på antal Hits och lös så att den inte går vidare till eventuell tom sida.
   let response = await fetch(API_URL);
   let json = await response.json();
   
   let resultAmount = json.hits;
+  let totalAmount = json.totalHits;
+  //vi skapar en variabel som kollar totalpages genom att avrunda totalamount / resulamount.lenght
+  let totalpages = Math.ceil(totalAmount / resultAmount.length)
 
-  if (resultAmount.length < 10) {
+  //Sen kör vi det i if sats istället.
+  if (page >= totalpages) {
     nextButton.setAttribute('disabled', 'disabled');
   } else {
     nextButton.removeAttribute('disabled');
