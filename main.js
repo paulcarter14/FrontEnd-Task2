@@ -24,7 +24,7 @@ form.addEventListener('submit', e => {
   counter++;
 });
 
-backButton.addEventListener ('click', e => {
+backButton.addEventListener('click', e => {
   page--;
   search2 = search1;
   color2 = color1;
@@ -42,7 +42,7 @@ nextButton.addEventListener('click', e => {
   if (page > 1) {
     backButton.removeAttribute('disabled');
   }
-  
+
 });
 
 async function search(query, color) {
@@ -66,26 +66,26 @@ async function search(query, color) {
   // Ta bort Counter // räkna ut pages baserat på antal Hits och lös så att den inte går vidare till eventuell tom sida.
   let response = await fetch(API_URL);
   let json = await response.json();
-  
+
   let resultAmount = json.hits;
   let totalAmount = json.totalHits;
   //vi skapar en variabel som kollar totalpages genom att avrunda totalamount / resulamount.lenght
   let totalpages = Math.ceil(totalAmount / resultAmount.length)
 
-  //Sen kör vi det i if sats istället.
+  //Sen kör vi det i if sats istället för resultAmount < 10. Detta för att disabla knappen med mer precision.
   if (page >= totalpages) {
     nextButton.setAttribute('disabled', 'disabled');
   } else {
     nextButton.removeAttribute('disabled');
   }
 
-  if (page ===1){
+  if (page === 1) {
     backButton.setAttribute('disabled', 'disabled');
   }
 
   for (let i = 0; i < resultAmount.length; i++) {
     let image = json.hits[i];
-    
+
     // Här skapar vi en div med ett id som läggs in i display-container i html.
     let box = document.createElement("div");
     // box.id = "result-" + json.hits[i];
@@ -104,8 +104,8 @@ async function search(query, color) {
     let namePhotografer = json.hits[i].user;
     let nameElement = document.createElement('p');
     nameElement.textContent = 'Taken by: ' + namePhotografer;
-    box.appendChild( nameElement);
+    box.appendChild(nameElement);
 
-    
+
   }
 };
