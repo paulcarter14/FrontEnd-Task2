@@ -1,94 +1,206 @@
-*{
+* {
   text-align: center;
   box-sizing: border-box;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.body{
+html {
+  background-image: url('lol-map.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.body {
   text-align: center;
   max-width: 1200;
   margin-left: auto;
   margin-right: auto;
 }
 
-.info-container{
+.search-container {
   align-items: center;
+  justify-content: center;
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  margin-top: 100px;
 }
 
-
-.search-container{
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-margin-top: 2rem;
-}
-
-#search-input{
+#search-input {
   width: 20rem;
   height: 2rem;
   font-size: large;
   border-width: 2px;
 }
 
-#search-button{
-  margin-top: 5px;
+#color-input {
+  width: 10rem;
   height: 2rem;
-  width: 4rem;
-  border-radius: 2px;
-  border-radius: 13%;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  font-size: large;
+  border-width: 2px;
+  margin: 1rem;
 }
 
+#search-button {
+  height: 2rem;
+  width: 4rem;
+}
+
+/* 63 - 111 är för display-layouten på sidan. */
 .display-container {
   display: grid;
   grid-template:
-  "a b"
-  "c d e f"
-  "g h i j" / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  }
-  
-  #result-1 {
+    "a b c d"
+    "e f g h"
+    "fake1 i j fake2" / 1fr 1fr 1fr 1fr;
+  place-items: center;
+}
+
+#result-0 {
   grid-area: a;
-  }
-  
-  #result-2 {
+}
+
+#result-1 {
   grid-area: b;
-  }
-  
-  #result-3 {
+}
+
+#result-2 {
   grid-area: c;
-  }
-  
-  #result-4 {
+}
+
+#result-3 {
   grid-area: d;
-  }
-  
-  #result-5 {
+}
+
+#result-4 {
   grid-area: e;
-  }
-  
-  #result-6 {
+}
+
+#result-5 {
   grid-area: f;
-  }
-  
-  #result-7 {
+}
+
+#result-6 {
   grid-area: g;
-  }
-  
-  #result-8 {
+}
+
+#result-7 {
   grid-area: h;
-  }
-  
-  #result-9 {
+}
+
+#result-8 {
   grid-area: i;
-  }
-  
-  #result-10 {
+}
+
+#result-9 {
   grid-area: j;
+}
+
+/* 113 - 167 är mediaquerries som ändrar layoputen baserat på skärmstorleken.*/
+@media (max-width: 1200px) {
+  .display-container {
+    display: grid;
+    grid-template:
+      "a b c"
+      "d e f"
+      "g h i"
+      "fake1 j fake2";
   }
 
+  #image {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .display-container {
+    display: grid;
+    grid-template:
+      "a b"
+      "c d"
+      "e f"
+      "g h"
+      "i j";
+  }
+
+  #image {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .display-container {
+    display: grid;
+    grid-template:
+      "a"
+      "b"
+      "c"
+      "d"
+      "e"
+      "f"
+      "g"
+      "h"
+      "i"
+      "j";
+  }
+
+  #image {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* 158 - 186 är för display boxen samt bilden. boxen är högre än bilden för att få plats med text*/
+#result-0,
+#result-1,
+#result-2,
+#result-3,
+#result-4,
+#result-5,
+#result-6,
+#result-7,
+#result-8,
+#result-9 {
+  height: 400px;
+  width: 300px;
+}
+
+#result-0 img,
+#result-1 img,
+#result-2 img,
+#result-3 img,
+#result-4 img,
+#result-5 img,
+#result-6 img,
+#result-7 img,
+#result-8 img,
+#result-9 img {
+  height: 300px;
+  width: 300px;
+}
+
+/* 184 - 202 är för fonten på tagg-texten samt namnet på fotogragfen */
+.display-container p {
+  font-size: 26px;
+  display: block;
+  margin: 0;
+  color: white;
+}
+
+#result-0 :last-child,
+#result-1 :last-child,
+#result-2 :last-child,
+#result-3 :last-child,
+#result-4 :last-child,
+#result-5 :last-child,
+#result-6 :last-child,
+#result-7 :last-child,
+#result-8 :last-child,
+#result-9 :last-child {
+  font-size: 17px;
+}
