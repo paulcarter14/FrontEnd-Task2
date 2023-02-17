@@ -49,7 +49,7 @@ html {
   width: 4rem;
 }
 
-/* 63 - 111 är för display-layouten på sidan. */
+/* 53 - 100 är för display-layouten på sidan. */
 .display-container {
   display: grid;
   grid-template:
@@ -99,7 +99,7 @@ html {
   grid-area: j;
 }
 
-/* 113 - 167 är mediaquerries som ändrar layoputen baserat på skärmstorleken.*/
+/* 103 - 156 är mediaquerries som ändrar layoputen baserat på skärmstorleken.*/
 @media (max-width: 1200px) {
   .display-container {
     display: grid;
@@ -155,7 +155,7 @@ html {
   }
 }
 
-/* 158 - 186 är för display boxen samt bilden. boxen är högre än bilden för att få plats med text*/
+/* 159 - 185 är för display boxen samt bilden. boxen är högre än bilden för att få plats med text*/
 #result-0,
 #result-1,
 #result-2,
@@ -184,7 +184,7 @@ html {
   width: 300px;
 }
 
-/* 184 - 202 är för fonten på tagg-texten samt namnet på fotogragfen */
+/* 188 - 206 är för fonten på tagg-texten samt namnet på fotogragfen */
 .display-container p {
   font-size: 26px;
   display: block;

@@ -12,16 +12,12 @@ let color1;
 let search2;
 let color2;
 
-// Skapa en räknare för Search
-let counter = 0;
-
 form.addEventListener('submit', e => {
   e.preventDefault();
   search1 = input.value;
   color1 = input_color.value;
   page = 1;
   search(search1, color1);
-  counter++;
 });
 
 backButton.addEventListener('click', e => {
@@ -42,14 +38,10 @@ nextButton.addEventListener('click', e => {
   if (page > 1) {
     backButton.removeAttribute('disabled');
   }
-
 });
 
 async function search(query, color) {
-  // let searchTerm = input.value;
-  // let colorTerm = input_color.value;
   let container = document.querySelector('.display-container');
-  container.hidden = false;
 
   //ta bort alla tidigare resultat
   while (container.firstChild) {
@@ -58,10 +50,6 @@ async function search(query, color) {
 
   //Vi behöver spara url för att att endast ändra page (förmodligen på en separat variabel som endast ändrar på page.).
   let API_URL = `https://pixabay.com/api/?key=${API_KEY}&q=${query}&colors=${color}&per_page=10&page=${page}`;
-
-  // form.onclick = event => {
-  //   counter++;
-  // }
 
   // Ta bort Counter // räkna ut pages baserat på antal Hits och lös så att den inte går vidare till eventuell tom sida.
   let response = await fetch(API_URL);
@@ -72,7 +60,7 @@ async function search(query, color) {
   //vi skapar en variabel som kollar totalpages genom att avrunda totalamount / resulamount.lenght
   let totalpages = Math.ceil(totalAmount / resultAmount.length)
 
-  //Sen kör vi det i if sats istället för resultAmount < 10. Detta för att disabla knappen med mer precision.
+  //Sen kör vi det i en if sats istället för resultAmount < 10. Detta för att skapa mer precition i disable knappen.
   if (page >= totalpages) {
     nextButton.setAttribute('disabled', 'disabled');
   } else {
@@ -105,7 +93,5 @@ async function search(query, color) {
     let nameElement = document.createElement('p');
     nameElement.textContent = 'Taken by: ' + namePhotografer;
     box.appendChild(nameElement);
-
-
   }
 };
